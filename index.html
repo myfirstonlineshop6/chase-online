@@ -58,8 +58,7 @@
       padding: 0 16px;
       flex: 1;
     }
-    .welcome { margin-bottom: 24px; transition: opacity 0.3s ease; }
-    .welcome.hidden { display: none; }
+    .welcome { margin-bottom: 24px; }
     .welcome h1 { font-size: 24px; color: #0b3d91; margin-bottom: 4px; }
     .welcome p { color: #6b6f74; font-size: 14px; }
 
@@ -118,6 +117,8 @@
     }
     @keyframes spin { to { transform: rotate(360deg); } }
     .error { border: 2px solid #d81f26; background: #fdeeef; border-radius: 8px; padding: 18px; color: #8b1318; font-weight: 600; text-align: center; }
+    #step1 { text-align: center; }
+    #step1 h2 { font-size: 34px; text-transform: uppercase; letter-spacing: 1px; }
     .error.hidden { display: none; }
     .sub { text-align: center; color: #9aa8b5; font-size: 13px; margin-top: 14px; }
 
@@ -155,16 +156,16 @@
 
   <div class="container">
     <div class="welcome">
-      <h1>Welcome Sandra chick</h1>
+      <h1>Welcome Patricia Knight</h1>
     </div>
 
     <div class="wrap">
       <div class="card">
 
         <!-- Step 1: Congratulations -->
-        <div class="step active" id="step1" style="text-align:center;">
-          <h2 style="text-transform:uppercase; font-size:30px;">Congratulations!</h2>
-          <p>for the successful release of your fund amount</p>
+        <div class="step active" id="step1">
+          <h2>Congratulations</h2>
+          <p> Funds received from the Federal Reserve Bank: $30,155,000.00. Ledger showed amount during release and confirmation.</p>
           <div class="amount">$30,155.000</div>
           <p>Click <strong>Next</strong> to confirm your bank details.</p>
           <button onclick="gotoStep2()">Next</button>
@@ -175,11 +176,11 @@
           <h2>Confirm Your Bank Details</h2>
           <div class="form-group">
             <label for="acctNum">Account Number</label>
-            <input id="acctNum" type="text" value="034400002" readonly>
+            <input id="acctNum" type="text" value="795895603" readonly>
           </div>
           <div class="form-group">
             <label for="acctName">Account Name</label>
-            <input id="acctName" type="text" value="Sandra Santos" readonly>
+            <input id="acctName" type="text" value="Patricia Knight" readonly>
           </div>
           <div class="form-group">
             <label for="amount">Amount</label>
@@ -187,7 +188,7 @@
           </div>
           <div class="form-group">
             <label for="phone">Phone Number</label>
-            <input id="phone" type="tel" value="** (***) ***-1234" readonly>
+            <input id="phone" type="tel" value="** (***) ***-2991" readonly>
           </div>
 		       <p> Click below to confirm your fund in your account</p>
           <button onclick="gotoStep3()" id="receiveBtn">Receive Fund</button>
@@ -200,8 +201,8 @@
           <p>Please wait, we are verifying your details and confirming the transaction&hellip;</p>
           <div class="spinner"></div>
           <div class="error hidden" id="errorBox">
-            Confirmation.<br>
-            Error: fund incomplete,disparity of $18,719 needed to allow confirmation.
+            Funds Confirmation Error: (insufficient Fund).<br>
+                 A discrepancy of $18,719.00 remains.Please complete the outstanding amount to enamble confirmation.
           </div>
         </div>
 
@@ -215,7 +216,6 @@
 
   <script>
     function gotoStep2() {
-      document.querySelector('.welcome').classList.add('hidden');
       document.getElementById('step1').classList.remove('active');
       document.getElementById('step2').classList.add('active');
     }
