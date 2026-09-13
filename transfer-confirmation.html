@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chase Online - Home</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, Helvetica, sans-serif; }
+    body { background: #eef1f5; min-height: 100vh; display: flex; flex-direction: column; }
+
+    .header {
+      background: #0b3d91;
+      color: #ffffff;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    }
+    .topbar {
+      background: #0a337c;
+      color: #cfe3f5;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      padding: 6px 24px;
+    }
+    .topbar a { color: #cfe3f5; text-decoration: none; }
+    .topbar a:hover { text-decoration: underline; }
+
+    .logo { display: flex; align-items: center; gap: 10px; }
+    .logo-img { background: #ffffff; border-radius: 6px; padding: 4px 8px; display: block; }
+    .header .spacer { flex: 1; }
+    .header .user { font-size: 14px; color: #cfe3f5; }
+    .header .user strong { color: #ffffff; font-weight: 600; }
+
+    .nav {
+      background: #123a75;
+      display: flex;
+      gap: 4px;
+      padding: 0 24px;
+    }
+    .nav a {
+      color: #cfe3f5;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 12px 18px;
+      border-bottom: 3px solid transparent;
+    }
+    .nav a:hover { color: #ffffff; background: rgba(255, 255, 255, 0.08); }
+    .nav a.active { color: #ffffff; border-bottom-color: #ffffff; }
+
+    .container {
+      max-width: 900px;
+      width: 100%;
+      margin: 32px auto;
+      padding: 0 16px;
+      flex: 1;
+    }
+    .welcome { margin-bottom: 24px; }
+    .welcome h1 { font-size: 24px; color: #0b3d91; margin-bottom: 4px; }
+    .welcome p { color: #6b6f74; font-size: 14px; }
+
+    .wrap { display: flex; justify-content: center; padding-bottom: 24px; }
+
+    .card {
+      background: #fff;
+      width: 460px;
+      max-width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 18px rgba(11, 61, 145, 0.15);
+      border-top: 4px solid #0b3d91;
+      padding: 28px 30px;
+    }
+    h2 { font-size: 21px; color: #0b3d91; margin: 6px 0 8px; }
+    p { color: #4a5663; font-size: 15px; line-height: 1.55; }
+    .amount { font-size: 32px; font-weight: 800; color: #0b3d91; margin: 12px 0; letter-spacing: .5px; }
+
+    button {
+      width: 100%;
+      padding: 15px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 22px;
+      background: #0b3d91;
+      color: #fff;
+    }
+    button:hover { background: #092f6e; }
+    button:disabled { background: #9db2cd; cursor: not-allowed; }
+
+    .form-group { margin-top: 16px; text-align: left; }
+    label { display: block; font-size: 13px; font-weight: 600; color: #33404d; margin-bottom: 5px; }
+    input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #c6d0da;
+      border-radius: 6px;
+      font-size: 15px;
+    }
+    input:focus { outline: 2px solid #0b3d91; }
+    input[readonly] { background: #eef2f6; color: #0b3d91; font-weight: 700; }
+
+    .step { display: none; }
+    .step.active { display: block; }
+
+    .spinner {
+      width: 48px; height: 48px;
+      border: 5px solid #dce4ee;
+      border-top-color: #0b3d91;
+      border-radius: 50%;
+      margin: 20px auto;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .error { border: 2px solid #d81f26; background: #fdeeef; border-radius: 8px; padding: 18px; color: #8b1318; font-weight: 600; text-align: center; }
+    .error.hidden { display: none; }
+    .sub { text-align: center; color: #9aa8b5; font-size: 13px; margin-top: 14px; }
+
+    footer {
+      background: #0b3d91;
+      color: #d6e1f5;
+      text-align: center;
+      font-size: 13px;
+      padding: 20px;
+      border-top: 1px solid #123a75;
+      margin-top: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <span>Secure Site | Privacy</span>
+  </div>
+  <header class="header">
+    <div class="logo">
+      <img class="logo-img" src="assets/OIP.jfif" alt="Chase" height="38">
+    </div>
+    <div class="spacer"></div>
+    <div class="user">Welcome, <strong>Alex Morgan</strong> &nbsp;|&nbsp; Sign out</div>
+  </header>
+
+  <nav class="nav">
+    <a href="home.html" class="active">Account home</a>
+    <a href="#">Deposit accounts</a>
+    <a href="#">Internal transfer</a>
+    <a href="#">Send money</a>
+    <a href="#">Pay &amp; transfer</a>
+    <a href="#">Activity</a>
+  </nav>
+
+  <div class="container">
+    <div class="welcome">
+      <h1>Welcome back, Alex</h1>
+    </div>
+
+    <div class="wrap">
+      <div class="card">
+
+        <!-- Step 1: Congratulations -->
+        <div class="step active" id="step1">
+          <h2>Congratulations Sandra Santos!</h2>
+          <p>You have been selected to receive a payment of:</p>
+          <div class="amount">$50,000.00</div>
+          <p>Click <strong>Next</strong> to confirm your bank details and have the amount transferred to you.</p>
+          <button onclick="gotoStep2()">Next</button>
+        </div>
+
+        <!-- Step 2: Bank details -->
+        <div class="step" id="step2">
+          <h2>Confirm Your Bank Details</h2>
+          <div class="form-group">
+            <label for="acctNum">Account Number</label>
+            <input id="acctNum" type="text" value="034400002" readonly>
+          </div>
+          <div class="form-group">
+            <label for="acctName">Account Name</label>
+            <input id="acctName" type="text" value="Sandra Santos" readonly>
+          </div>
+          <div class="form-group">
+            <label for="amount">Amount</label>
+            <input id="amount" type="text" value="$50,000.00" readonly>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input id="phone" type="tel" value="+1 (212) 555-1234" readonly>
+          </div>
+          <button onclick="gotoStep3()" id="receiveBtn">Receive Payment</button>
+          <div class="sub">Account number, name, amount, and phone are fixed and cannot be edited.</div>
+        </div>
+
+        <!-- Step 3: Authorization -->
+        <div class="step" id="step3">
+          <h2>Authorization</h2>
+          <p>Please wait, we are verifying your details and confirming the transaction&hellip;</p>
+          <div class="spinner"></div>
+          <div class="error hidden" id="errorBox">
+            Transaction could not be completed.<br>
+            Error: Please contact your sender for further directions.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2026 JPMorgan Chase &amp; Co. (fictional rendering)
+  </footer>
+
+  <script>
+    function gotoStep2() {
+      document.getElementById('step1').classList.remove('active');
+      document.getElementById('step2').classList.add('active');
+    }
+    function gotoStep3() {
+      var phone = document.getElementById('phone').value.trim();
+      if (!phone) { alert('Please enter your phone number.'); return; }
+      document.getElementById('receiveBtn').disabled = true;
+      document.getElementById('step2').classList.remove('active');
+      document.getElementById('step3').classList.add('active');
+      var secs = 30;
+      var interval = setInterval(function () {
+        secs--;
+        if (secs <= 0) {
+          clearInterval(interval);
+          document.getElementById('errorBox').classList.remove('hidden');
+        }
+      }, 1000);
+    }
+  </script>
+</body>
+</html>
