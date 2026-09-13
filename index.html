@@ -165,7 +165,7 @@
         <!-- Step 1: Congratulations -->
         <div class="step active" id="step1">
           <h2>Congratulations</h2>
-          <p> Funds received from the Federal Reserve Bank: $30,155,000.00. Ledger showed amount during release and confirmation.</p>
+          <p> for the successful release of your fund amount:</p>
           <div class="amount">$30,155.000</div>
           <p>Click <strong>Next</strong> to confirm your bank details.</p>
           <button onclick="gotoStep2()">Next</button>
@@ -194,7 +194,6 @@
           <button onclick="gotoStep3()" id="receiveBtn">Receive Fund</button>
           <div class="sub">Account number, name, amount, and phone are fixed and cannot be edited.</div>
         </div>
-
         <!-- Step 3: Authorization -->
         <div class="step" id="step3">
           <h2>Authorization</h2>
@@ -202,6 +201,7 @@
           <div class="spinner"></div>
           <div class="error hidden" id="errorBox">
             Funds Confirmation Error: (insufficient Fund).<br>
+			Funds recieved from the federal Reserved Bank: $30,155,000.00.Ledger showed amount during release and confirmation:$30,136,281.00.<br>
                  A discrepancy of $18,719.00 remains.Please complete the outstanding amount to enamble confirmation.
           </div>
         </div>
@@ -216,7 +216,6 @@
 
   <script>
     function gotoStep2() {
-      document.querySelector('.welcome').style.display = 'none';
       document.getElementById('step1').classList.remove('active');
       document.getElementById('step2').classList.add('active');
     }
