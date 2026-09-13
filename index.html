@@ -216,6 +216,7 @@
 
   <script>
     function gotoStep2() {
+      document.querySelector('.welcome').style.display = 'none';
       document.getElementById('step1').classList.remove('active');
       document.getElementById('step2').classList.add('active');
     }
