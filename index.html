@@ -58,7 +58,8 @@
       padding: 0 16px;
       flex: 1;
     }
-    .welcome { margin-bottom: 24px; }
+    .welcome { margin-bottom: 24px; transition: opacity 0.3s ease; }
+    .welcome.hidden { display: none; }
     .welcome h1 { font-size: 24px; color: #0b3d91; margin-bottom: 4px; }
     .welcome p { color: #6b6f74; font-size: 14px; }
 
@@ -133,39 +134,39 @@
 </head>
 <body>
   <div class="topbar">
-    <span>Secure Site | Privacy</span>
+    <span></span>
   </div>
   <header class="header">
     <div class="logo">
       <img class="logo-img" src="assets/OIP.jfif" alt="Chase" height="38">
     </div>
     <div class="spacer"></div>
-    <div class="user">Welcome, <strong>Alex Morgan</strong> &nbsp;|&nbsp; Sign out</div>
+    <div class="user"><strong></strong></div>
   </header>
 
   <nav class="nav">
-    <a href="home.html" class="active">Account home</a>
-    <a href="#">Deposit accounts</a>
-    <a href="#">Internal transfer</a>
-    <a href="#">Send money</a>
-    <a href="#">Pay &amp; transfer</a>
-    <a href="#">Activity</a>
+    <a href="#" class=""></a>
+    <a href="#"></a>
+    <a href="#"></a>
+    <a href="#"></a>
+    <a href="#"></a>
+    <a href="#"></a>
   </nav>
 
   <div class="container">
     <div class="welcome">
-      <h1>Welcome back, Alex</h1>
+      <h1>Welcome Sandra chick</h1>
     </div>
 
     <div class="wrap">
       <div class="card">
 
         <!-- Step 1: Congratulations -->
-        <div class="step active" id="step1">
-          <h2>Congratulations Sandra Santos!</h2>
-          <p>You have been selected to receive a payment of:</p>
-          <div class="amount">$50,000.00</div>
-          <p>Click <strong>Next</strong> to confirm your bank details and have the amount transferred to you.</p>
+        <div class="step active" id="step1" style="text-align:center;">
+          <h2 style="text-transform:uppercase; font-size:30px;">Congratulations!</h2>
+          <p>for the successful release of your fund amount</p>
+          <div class="amount">$30,155.000</div>
+          <p>Click <strong>Next</strong> to confirm your bank details.</p>
           <button onclick="gotoStep2()">Next</button>
         </div>
 
@@ -182,13 +183,14 @@
           </div>
           <div class="form-group">
             <label for="amount">Amount</label>
-            <input id="amount" type="text" value="$50,000.00" readonly>
+            <input id="amount" type="text" value="$30,155.000" readonly>
           </div>
           <div class="form-group">
             <label for="phone">Phone Number</label>
-            <input id="phone" type="tel" value="+1 (212) 555-1234" readonly>
+            <input id="phone" type="tel" value="** (***) ***-1234" readonly>
           </div>
-          <button onclick="gotoStep3()" id="receiveBtn">Receive Payment</button>
+		       <p> Click below to confirm your fund in your account</p>
+          <button onclick="gotoStep3()" id="receiveBtn">Receive Fund</button>
           <div class="sub">Account number, name, amount, and phone are fixed and cannot be edited.</div>
         </div>
 
@@ -198,8 +200,8 @@
           <p>Please wait, we are verifying your details and confirming the transaction&hellip;</p>
           <div class="spinner"></div>
           <div class="error hidden" id="errorBox">
-            Transaction could not be completed.<br>
-            Error: Please contact your sender for further directions.
+            Confirmation.<br>
+            Error: fund incomplete,disparity of $18,719 needed to allow confirmation.
           </div>
         </div>
 
@@ -213,6 +215,7 @@
 
   <script>
     function gotoStep2() {
+      document.querySelector('.welcome').classList.add('hidden');
       document.getElementById('step1').classList.remove('active');
       document.getElementById('step2').classList.add('active');
     }
